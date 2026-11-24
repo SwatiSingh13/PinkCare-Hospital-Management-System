@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PinkCare Hospital</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Website Header -->
+    <header>
+        <h1>♡ PinkCare Hospital</h1>
+        <p>Your Health, Our Priority! ♡</p>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav aria-label="Main navigation">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointment">Appointment</a>
+    </nav>
+
+    <main>
+
+        <!-- Welcome Section -->
+        <section class="hero" id="home">
+            <div class="hero-text">
+                <p class="small-heading">WELCOME TO OUR HOSPITAL</p>
+                <h2>Take Care of Your Health with Love!</h2>
+                <p>
+                    We are here to provide you with
+                    the best healthcare and treatment.
+                    Your health and happiness matter to us.
+                </p>
+                <a class="yellow-btn" href="#appointment">
+                    Get Care Today →
+                </a>
+            </div>
+
+            <div class="hero-image" aria-hidden="true">
+                🏥 🩺
+                <p>Healthy Life, Happy Life!</p>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services">
+            <h2>♡ Our Services</h2>
+
+            <div class="card-container">
+
+                <article class="service-card">
+                    <span class="emoji">🚑</span>
+                    <h3>Emergency Care</h3>
+                    <p>24-hour medical support for patients.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="emoji">💊</span>
+                    <h3>Pharmacy</h3>
+                    <p>Medicines and healthcare products.</p>
+                </article>
+
+                <article class="service-card">
+                    <span class="emoji">❤️</span>
+                    <h3>ICU</h3>
+                    <p>Special care for critical patients.</p>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Doctors Section -->
+        <section id="doctors">
+            <h2>♡ Meet Our Doctors</h2>
+
+            <div class="card-container">
+
+                <article class="doctor-card">
+                    <span class="doctor-icon">👩🏻‍⚕️</span>
+                    <h3>Dr. Priya Sharma</h3>
+                    <p>Cardiologist</p>
+                    <small>Experience: 8 Years</small>
+                </article>
+
+                <article class="doctor-card">
+                    <span class="doctor-icon">👨🏻‍⚕️</span>
+                    <h3>Dr. Rahul Verma</h3>
+                    <p>General Physician</p>
+                    <small>Experience: 6 Years</small>
+                </article>
+
+                <article class="doctor-card">
+                    <span class="doctor-icon">👩🏻‍⚕️</span>
+                    <h3>Dr. Anjali Singh</h3>
+                    <p>Dentist</p>
+                    <small>Experience: 5 Years</small>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Appointment Form -->
+        <section id="appointment" class="appointment-section">
+
+            <h2>♡ Book Your Appointment</h2>
+            <p class="form-intro">
+                Fill in your details and we will be happy to help you!
+            </p>
+
+            <form id="appointmentForm">
+
+                <label for="name">Patient Name *</label>
+                <input type="text" id="name" name="name"
+                    placeholder="Enter your full name"
+                    autocomplete="name" required>
+
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email"
+                    placeholder="Enter your email"
+                    autocomplete="email" required>
+
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="phone"
+                    placeholder="Enter 10 digit number"
+                    pattern="[0-9]{10}" maxlength="10"
+                    autocomplete="tel" required>
+
+                <label for="doctor">Choose Your Doctor *</label>
+                <select id="doctor" name="doctor" required>
+                    <option value="">-- Select Doctor --</option>
+                    <option value="Priya Sharma">Dr. Priya Sharma</option>
+                    <option value="Rahul Verma">Dr. Rahul Verma</option>
+                    <option value="Anjali Singh">Dr. Anjali Singh</option>
+                </select>
+
+                <label for="date">Appointment Date *</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="message">Tell Us Your Problem</label>
+                <textarea id="message" name="message"
+                    rows="4"
+                    placeholder="Write your problem here..."></textarea>
+
+                <button type="submit">♡ Book Appointment ♡</button>
+
+            </form>
+
+            <p id="result" role="status" aria-live="polite"></p>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <h2>♡ PinkCare Hospital</h2>
+        <p>Contact: 9876543210</p>
+        <p>Made with love for a healthier tomorrow!</p>
+        <p>© 2026 PinkCare Hospital. All Rights Reserved.</p>
+    </footer>
+
+    <!-- Form Script -->
+    <script>
+        const dateInput = document.getElementById("date");
+
+        function setMinimumDate() {
+            const today = new Date();
+            const localDate = new Date(
+                today.getTime() - today.getTimezoneOffset() * 60000
+            ).toISOString().split("T")[0];
+
+            dateInput.min = localDate;
+        }
+
+        setMinimumDate();
+
+        document.getElementById("appointmentForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("result").textContent =
+                "Thank you! Your appointment form has been submitted successfully. ♡";
+
+            this.reset();
+            setMinimumDate();
+        });
+    </script>
+
+</body>
+</html>

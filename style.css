@@ -1,0 +1,298 @@
+
+/* Basic Page Styling */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    background-color: #fff9f6;
+    color: #513344;
+}
+
+/* Header */
+header {
+    background: linear-gradient(120deg, #f78fb3, #f5b4cb);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    border-radius: 0 0 35px 35px;
+}
+
+header h1 {
+    font-size: 34px;
+    margin: 5px;
+}
+
+header p {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+/* Navigation */
+nav {
+    background-color: #ffe6a7;
+    text-align: center;
+    padding: 15px;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: #633c4e;
+    font-weight: bold;
+    margin: 5px 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background-color: #f48fb1;
+    color: white;
+}
+
+/* Main Content */
+main {
+    max-width: 1150px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Welcome Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: linear-gradient(120deg, #ffe1eb, #fff0cb);
+    padding: 35px;
+    border-radius: 25px;
+    margin: 20px 0;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h2 {
+    color: #d63384;
+    font-size: 32px;
+}
+
+.small-heading {
+    color: #c04a7d;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    font-size: 75px;
+}
+
+.hero-image p {
+    font-size: 16px;
+    color: #a34e73;
+}
+
+/* Yellow Button */
+.yellow-btn {
+    display: inline-block;
+    background-color: #ffdb85;
+    color: #573746;
+    padding: 12px 22px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.yellow-btn:hover {
+    background-color: #f48fb1;
+    color: white;
+}
+
+/* Sections */
+section:not(.hero) {
+    background-color: white;
+    padding: 25px;
+    margin: 25px 0;
+    border-radius: 22px;
+    box-shadow: 0 4px 15px rgba(230, 120, 160, 0.12);
+}
+
+section h2 {
+    color: #d63384;
+    font-size: 26px;
+    margin-top: 5px;
+}
+
+/* Cards */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+.service-card,
+.doctor-card {
+    background-color: #fff0f5;
+    text-align: center;
+    padding: 22px 15px;
+    border-radius: 18px;
+    flex: 1 1 220px;
+    transition: 0.3s;
+}
+
+.service-card:hover,
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(220, 90, 140, 0.18);
+}
+
+.service-card h3,
+.doctor-card h3 {
+    color: #bd397b;
+}
+
+.emoji {
+    font-size: 45px;
+}
+
+.doctor-icon {
+    font-size: 55px;
+}
+
+/* Appointment Form */
+.appointment-section {
+    max-width: 750px;
+    margin: 30px auto !important;
+    background-color: #fff !important;
+}
+
+.form-intro {
+    color: #8c6477;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    color: #673d54;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #f3b1c9;
+    border-radius: 10px;
+    font-size: 15px;
+    background-color: #fffafb;
+    color: #513344;
+    font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid #f48fb1;
+    outline-offset: 2px;
+}
+
+/* Submit Button */
+button {
+    display: block;
+    width: 100%;
+    background-color: #f48fb1;
+    color: white;
+    padding: 14px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d63384;
+}
+
+/* Focus for Keyboard Users */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid #9b3971;
+    outline-offset: 3px;
+}
+
+/* Form Result */
+#result {
+    color: #b12b70;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Footer */
+footer {
+    background: linear-gradient(120deg, #f48fb1, #ed78a6);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 30px 30px 0 0;
+}
+
+footer h2 {
+    margin-top: 0;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 650px) {
+
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav a {
+        margin: 4px;
+        padding: 8px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 22px;
+    }
+
+    .hero-text h2 {
+        font-size: 25px;
+    }
+
+    .hero-image {
+        font-size: 55px;
+    }
+
+    section:not(.hero) {
+        padding: 18px;
+    }
+
+    .service-card,
+    .doctor-card {
+        flex-basis: 100%;
+    }
+}
